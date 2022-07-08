@@ -1,12 +1,11 @@
 const toggleMenu = document.querySelector('.toggle-menu');
-let toggleBars = document.querySelector('.fa-bars');
-let toggleTimes = document.querySelector('.fa-times');
-let toggleDesktopMenu = document.querySelector('.desktop-menu');
-// const toggleMenu = document.querySelector('.toggle-menu');
+let menuOpen = document.querySelector('.fa-bars');
+let menuClose = document.querySelector('.fa-times');
+let menu = document.querySelector('.menu');
 
 toggleMenu.addEventListener("click", function() {
   toggleMenu.classList.toggle("active");
-  toggleBars.classList.toggle("hide");
-  toggleTimes.classList.toggle("active");
-  toggleDesktopMenu.classList.toggle("active");
+  menuOpen.classList.toggle("hide");
+  menuClose.classList.toggle("active");
+  menu.classList.toggle("active");
 });

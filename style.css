@@ -33,7 +33,7 @@ p {
   margin: 0 auto;
 }
 
-.hero, section {
+section {
   padding: 5em 0;
 }
 
@@ -48,20 +48,19 @@ p {
 /* ----- */
 
 header .flex {
-  height: 100%;
+  height: 4em;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 header {
-  height: 4em;
   background-color: #2E323F;
 }
 
 .toggle-menu {
   color: #fff;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 .fa {
@@ -80,30 +79,27 @@ header {
   display: block;
 }
 
-.desktop-menu {
-  display: none;
-}
-
-.desktop-menu.active {
-  display: block;
-}
-
-.desktop-menu {
+.menu {
   position: absolute;
-  top: 4em;
   left: 0;
+  top: -999px;
   width: 100%;
   padding: 2em 0;
   background-color: #fff;
   text-align: center;
   box-shadow: rgba(0, 0, 0, 0.3);
+  transition: .5s ease;
+}
+
+.menu.active {
+  top: 4em;
 }
 
 /* .list-item + .list-item {
   margin-top: 1em;
 } */
 
-.desktop-menu a {
+.menu a {
   display: inline-block;
   color: #2E323F;
   text-decoration: none;
@@ -208,11 +204,11 @@ header {
   }
 
   .flex-col {
-    width: 70%;
-    margin: 0 auto 2.5em;
+    width: 80%;
+    margin: 0 auto 2.5rem;
   }
 
-  .hero, section {
+  section {
     text-align: center;
   }
 
@@ -234,7 +230,7 @@ header {
     width: 85%;
   }
 
-  .hero .flex, section .flex {
+  section .flex {
     display: flex;
   }
 
@@ -242,32 +238,26 @@ header {
     margin: 0 auto;
   }
 
-  /* -- */
-  header .flex {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
   .toggle-menu {
     display: none;
   }
 
-  .desktop-menu {
-    display: block;
+  .menu {
+    /* display: flex;
+    justify-content: flex-end; */
     width: auto;
     position: static;
     padding: 0;
     background-color: transparent;
   }
 
-  .desktop-menu ul {
+  .menu ul {
     display: flex;
-    align-items: center;
-    margin: 0 
+    margin: 0;
+
   }
 
-  .desktop-menu a {
+  .menu a {
     color: #fff;
     margin: 0;
     margin-left: 0.5em;
@@ -285,9 +275,7 @@ header {
     /* -- */
 
   .hero .flex {
-    gap: 2.5em;
     text-align: left;
-    /* justify-content: space-between; */
   }
 
   .hero h1 {
@@ -295,14 +283,19 @@ header {
     margin-bottom: 0;
   }
 
-  .hero .flex-col:first-child {
+  .hero .grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+  }
+
+  /* .hero .flex-col:first-child {
     width: 62%;
   }
 
   .hero .flex-col:last-child {
     margin-top: 0.8em;
     width: 44%;
-  }
+  } */
 
   /* -- */
 
@@ -326,14 +319,14 @@ header {
 
   /* -- */
 
-  .section-3 .flex-col:first-child{
+  .section-3 .flex-col-1 {
     text-align: left;
     width: 40%;
   }
 }
 
 @media (min-width: 1300px) {
-  .hero .flex {
-    gap: 3em;
+  .hero .grid {
+    grid-template-columns: 1.3fr .9fr;
   }
 }
